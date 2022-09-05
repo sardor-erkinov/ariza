@@ -64,7 +64,7 @@ const LoginModal = ({ setOpen, open }: LoginModalProps) => {
               />
               <NumberInput required placeholder="JShShIRni kiriting" label="JShShIR" hideControls />
               <Box className={classes.alert}>
-                "SMS-xabar" xizmati arizalarni ko'rib chiqish jarayonida arizani tasdqilash uchun
+                {'SMS-xabar'}xizmati arizalarni ko'rib chiqish jarayonida arizani tasdqilash uchun
                 mo'ljallangan. "SMS-xabar" xizmati uchun 40 so'm to'lov undiriladi. SMS xabar
                 abonentning hisobida yetarli miqdorda mablag' bo'lsagina boradi.
               </Box>
