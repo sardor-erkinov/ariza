@@ -6,9 +6,9 @@ const RightArrow: IconType = (props) => {
       <path
         d="M22.667 10.667L28 16m0 0l-5.333 5.333M28 16H4"
         stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       ></path>
     </svg>
   );

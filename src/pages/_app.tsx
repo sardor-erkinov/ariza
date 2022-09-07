@@ -7,6 +7,7 @@ import Head from 'next/head';
 import { MantineProvider, ColorScheme, ColorSchemeProvider } from '@mantine/core';
 import { NotificationsProvider } from '@mantine/notifications';
 import Layout from '../components/layout';
+import { UserProvider } from '../context/user/user.state';
 
 export default function App(props: AppProps & { colorScheme: ColorScheme }) {
   const { Component, pageProps } = props;
@@ -74,11 +75,13 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
           withGlobalStyles
           withNormalizeCSS
         >
-          <NotificationsProvider>
-            <Layout>
-              <Component {...pageProps} />
-            </Layout>
-          </NotificationsProvider>
+          <UserProvider>
+            <NotificationsProvider>
+              <Layout>
+                <Component {...pageProps} />
+              </Layout>
+            </NotificationsProvider>
+          </UserProvider>
         </MantineProvider>
       </ColorSchemeProvider>
     </>
