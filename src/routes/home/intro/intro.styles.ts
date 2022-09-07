@@ -5,6 +5,8 @@ export const useStyles = createStyles((theme) => ({
     width: '100%',
     height: '100%',
     overflow: 'hidden',
+    zIndex: -2,
+    background: theme.colorScheme === 'light' ? 'rgb(229, 231, 235)' : 'transparent',
   },
   ellipsis: {
     background:

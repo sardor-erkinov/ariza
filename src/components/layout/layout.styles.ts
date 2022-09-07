@@ -4,8 +4,6 @@ export const useStyles = createStyles((theme, _getRef) => ({
   wrapper: {
     width: '100%',
     height: '100%',
-    // top: '-80px',
-    // bottom: '80px !important',
     margin: '0 auto 0 auto',
     display: 'flex',
     position: 'relative',
@@ -13,6 +11,7 @@ export const useStyles = createStyles((theme, _getRef) => ({
     alignItems: 'center',
   },
   child: {
+    width: '100%',
     height: '100%',
   },
   toaster: {
