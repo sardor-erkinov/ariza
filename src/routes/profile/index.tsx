@@ -1,49 +1,38 @@
-import { Button, Container, Group, Stepper } from '@mantine/core';
+import { Button, Container, Group, Stepper, Title } from '@mantine/core';
 import { useState } from 'react';
 import { useStyles } from './profile.styles';
+import AppStepper from './stepper';
 
 const ApplicationSteps = () => {
-  const [active, setActive] = useState(1);
+  const [active, setActive] = useState(0);
   const { classes } = useStyles();
   const nextStep = () => setActive((current) => (current < 4 ? current + 1 : current));
   const prevStep = () => setActive((current) => (current > 0 ? current - 1 : current));
+  console.log({ active });
 
   return (
     <div className={classes.wrapper}>
-      <Container className={classes.topContainer} size={'lg'}>
-        <Stepper active={active} onStepClick={setActive} breakpoint="sm">
-          <Stepper.Step
-            label="First step"
-            description="Create an account"
-            allowStepSelect={active > 0}
-          >
-            Step 1 content: Create an account
-          </Stepper.Step>
-          <Stepper.Step label="Second step" description="Verify email" allowStepSelect={active > 1}>
-            Step 2 content: Verify email
-          </Stepper.Step>
-          <Stepper.Step
-            label="Final step"
-            description="Get full access"
-            allowStepSelect={active > 2}
-          >
-            Step 3 content: Get full access
-          </Stepper.Step>
-          <Stepper.Step
-            label="Final step"
-            description="Get full access"
-            allowStepSelect={active > 3}
-          >
-            Step 4 content: Get full access
-          </Stepper.Step>
-          <Stepper.Completed>
-            Completed, click back button to get to previous step
-          </Stepper.Completed>
-        </Stepper>
+      <Container
+        sx={(theme) => ({
+          padding: '0 !important',
+          [theme.fn.smallerThan('xl')]: { padding: '0 20px !important' },
+        })}
+        mt={72}
+        mb={27}
+        size={'lg'}
+      >
+        <Title order={3}>Ma‘lumotnomani to‘ldirish va ariza topshirish</Title>
       </Container>
-      <Container mt={30} p={'1.5rem !important'} className={classes.btmContainer} size={'lg'}>
-        <Group position={active !== 1 ? 'apart' : 'right'}>
-          {active !== 1 && (
+      <AppStepper setActive={setActive} active={active} />
+      <Container
+        mb={40}
+        mt={30}
+        p={'1.5rem !important'}
+        className={classes.btmContainer}
+        size={'lg'}
+      >
+        <Group position={active !== 0 ? 'apart' : 'right'}>
+          {active !== 0 && (
             <Button size="lg" variant="default" onClick={prevStep}>
               Orqaga
             </Button>

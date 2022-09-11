@@ -8,12 +8,37 @@ import Button from '../button';
 import LoginModal from './login';
 import { useCollectUser } from '../../context/user/user.state';
 import { CaretDownIcon, TrashIcon } from '@modulz/radix-icons';
+import { logout } from '../../context/user/user.action';
+import LogoutModal from './logout';
 
 const Header = () => {
   const router = useRouter();
   const [open, setOpen] = useState<boolean>(false);
+  const [openLogout, setOpenLogout] = useState<boolean>(false);
   const { classes } = useStyles();
   const { isLoggedIn } = useCollectUser();
+  const hashLinks = [
+    {
+      id: 1,
+      name: 'Asosiy',
+      hashtag: '#main',
+    },
+    {
+      id: 2,
+      name: 'Imtiyozlar',
+      hashtag: '#privilege',
+    },
+    {
+      id: 3,
+      name: 'Yangiliklar',
+      hashtag: '#news',
+    },
+    {
+      id: 4,
+      name: 'Statistikalar',
+      hashtag: '#statistics',
+    },
+  ];
   return (
     <header className={classes.header}>
       <Container px={12} py={27} size={'xl'}>
@@ -21,24 +46,20 @@ const Header = () => {
           <LogoIcon />
 
           <Group spacing={40}>
-            <Link passHref href={'#main'}>
-              <Text size={'sm'}>Asosiy</Text>
-            </Link>
-            <Link passHref href={'#privilege'}>
-              <Text size={'sm'}>Imtiyozlar</Text>
-            </Link>
-            <Link passHref href={'#news'}>
-              <Text size={'sm'}>Yangiliklar</Text>
-            </Link>
-            <Link passHref href={'#statistics'}>
-              <Text size={'sm'}>Statistikalar</Text>
-            </Link>
+            {hashLinks.map((item) => (
+              <Link key={item.id} passHref href={`/${item.hashtag}`}>
+                <Text weight={500} size={'sm'}>
+                  {item.name}
+                </Text>
+              </Link>
+            ))}
+
             {isLoggedIn ? (
               <Menu
                 withArrow
                 control={
                   <Center>
-                    <Text color={'blue'} size="xs">
+                    <Text weight={500} color={'blue'} size="xs">
                       Mening profilim
                     </Text>
                     <CaretDownIcon color="blue" width={28} height={28} />
@@ -53,7 +74,13 @@ const Header = () => {
                 <Menu.Item onClick={() => router.push('/profile')}>Mening arizam</Menu.Item>
                 <Menu.Item>Yangi bildirishnomalar</Menu.Item>
                 <Divider />
-                <Menu.Item icon={<TrashIcon height={24} width={24} />} color="red">
+                <Menu.Item
+                  onClick={() => {
+                    setOpenLogout(true);
+                  }}
+                  icon={<TrashIcon height={24} width={24} />}
+                  color="red"
+                >
                   Chiqish
                 </Menu.Item>
               </Menu>
@@ -70,6 +97,7 @@ const Header = () => {
         </Group>
       </Container>
       <LoginModal setOpen={setOpen} open={open} />
+      <LogoutModal setOpen={setOpenLogout} open={openLogout} />
     </header>
   );
 };

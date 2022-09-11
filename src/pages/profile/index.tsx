@@ -1,3 +1,4 @@
+import withAuth from '../../components/private-route/private-route';
 import ApplicationSteps from '../../routes/profile';
 
 const Profile = () => {
@@ -8,4 +9,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default withAuth(Profile);

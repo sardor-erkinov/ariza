@@ -1,4 +1,5 @@
 import { Box, Container, Group } from '@mantine/core';
+import { showNotification } from '@mantine/notifications';
 import { StudentsImg } from '../../../components/assets';
 import Img from '../../../components/image';
 import IntroTitle from './intro-title';

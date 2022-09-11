@@ -15,13 +15,18 @@ const initialState: Account = {
   token: loadState('user')?.token ?? '',
 };
 const userReducer: Reducer<Account, UserActions> = (state: Account, action: UserActions) => {
+  const router = useRouter();
   switch (action.type) {
     case UserActionTypes.LOGIN:
       saveState('user', { ...state, token: `Token ${action.payload}`, isLoggedIn: true });
       return { ...state, token: action.payload, isLoggedIn: true };
     case UserActionTypes.LOGOUT:
-      saveState('user', { ...initialState });
-      return { ...initialState };
+      saveState('user', {});
+      router.push(router.pathname);
+      return {
+        isLoggedIn: false,
+        token: '',
+      };
     default:
       return state;
   }

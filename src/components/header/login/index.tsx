@@ -29,6 +29,7 @@ const LoginModal = ({ setOpen, open }: LoginModalProps) => {
         message: "Siz ro'yxatdan muvaffaqiyatli o'tdingiz. ✋",
       });
       dispatch(loginAction('token123'));
+      setOpen(false);
     }
   };
   const handleVerification = (e: FormEvent) => {

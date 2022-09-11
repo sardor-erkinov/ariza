@@ -76,7 +76,7 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
           withNormalizeCSS
         >
           <UserProvider>
-            <NotificationsProvider>
+            <NotificationsProvider position="top-center">
               <Layout>
                 <Component {...pageProps} />
               </Layout>
