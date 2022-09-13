@@ -23,6 +23,8 @@ export const useStyles = createStyles((theme) => ({
   img: {
     maxWidth: '590px',
     width: '100%',
+    borderRadius: '60px !important',
+    filter: 'blur(1px)',
     height: 'auto',
   },
 }));

@@ -19,12 +19,9 @@ const IntroTitle = () => {
   return (
     <Stack style={{ maxWidth: '654px', width: '100%' }} spacing={55} py={'121px'}>
       <Title order={1}>
-        Magistratura uchun <span style={{ color: colors.yellow }}>Qabul 2022</span>
+        Zulfiya davlat mukofoti uchun <span style={{ color: colors.yellow }}>Qabul 2022</span>
       </Title>
-      <Text size="md">
-        Oliy ta'lim muassasalarining magistratura bosqichiga kirish uchun onlayn ariza topshirish
-        tizimi
-      </Text>
+      <Text size="md">Zulfiya nomidagi davlat mukofoti uchun onlayn ariza topshirish tizimi</Text>
       <Button onClick={handleClick} color={'yellow'} className={classes.longBtn}>
         <Group position="apart" spacing={120} style={{ width: '100%' }}>
           <Text size="md">Ariza topshiring</Text>
@@ -32,7 +29,7 @@ const IntroTitle = () => {
         </Group>
       </Button>
       <Group spacing={9}>
-        <Title order={3}>10030</Title>
+        <Title order={3}>10</Title>
         <Text size="xs">Jami arizalar soni</Text>
       </Group>
       <LoginModal setOpen={setOpen} open={open} />

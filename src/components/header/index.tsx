@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { useStyles } from './header.styles';
-import { Container, Group, Text, Tabs, Menu, Divider, Center } from '@mantine/core';
+import { Container, Group, Text, Tabs, Menu, Divider, Center, Box } from '@mantine/core';
 import LogoIcon from '../icons/logo.icon';
 import Button from '../button';
 import LoginModal from './login';
@@ -10,6 +10,7 @@ import { useCollectUser } from '../../context/user/user.state';
 import { CaretDownIcon, TrashIcon } from '@modulz/radix-icons';
 import { logout } from '../../context/user/user.action';
 import LogoutModal from './logout';
+import { LogoPng } from '../assets';
 
 const Header = () => {
   const router = useRouter();
@@ -43,7 +44,15 @@ const Header = () => {
     <header className={classes.header}>
       <Container px={12} py={27} size={'xl'}>
         <Group position="apart">
-          <LogoIcon />
+          <div onClick={() => router.push('/')} style={{ cursor: 'pointer' }}>
+            <img
+              style={{ borderRadius: '50%' }}
+              width={'80px'}
+              height={'80px'}
+              src={LogoPng.src}
+              alt=""
+            />
+          </div>
 
           <Group spacing={40}>
             {hashLinks.map((item) => (
