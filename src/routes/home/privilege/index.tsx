@@ -9,7 +9,7 @@ const Privilege = () => {
     <Container px={12} py={120} size={'xl'}>
       <Center>
         <Title align="center" mb={129} order={2}>
-          Magistraturaga topshiruvchilar <br /> uchun imtiyozlar
+          Davlat mukofotiga topshiruvchilar <br /> uchun imtiyozlar
         </Title>
       </Center>
       <Group
@@ -39,7 +39,7 @@ const Privilege = () => {
             Yutuqlar
           </Text>
           <Text weight={400} align="center" color={manTheme.colors.gray[5]} size="lg">
-            Nomdor davlat stipendiyalari va “Zulfiya” hamda “Mard o‘g‘lon” davlat mukofotlari.
+            Zulfiya nomidagi davlat mukofoti uchun onlayn ariza topshirish tizimi
           </Text>
         </Stack>
         <Stack
@@ -60,7 +60,7 @@ const Privilege = () => {
             Yutuqlar
           </Text>
           <Text weight={400} align="center" color={manTheme.colors.gray[5]} size="lg">
-            Nomdor davlat stipendiyalari va “Zulfiya” hamda “Mard o‘g‘lon” davlat mukofotlari.
+            Zulfiya nomidagi davlat mukofoti uchun onlayn ariza topshirish tizimi
           </Text>
         </Stack>
         <Stack
@@ -81,7 +81,7 @@ const Privilege = () => {
             Yutuqlar
           </Text>
           <Text weight={400} align="center" color={manTheme.colors.gray[5]} size="lg">
-            Nomdor davlat stipendiyalari va “Zulfiya” hamda “Mard o‘g‘lon” davlat mukofotlari.
+            Zulfiya nomidagi davlat mukofoti uchun onlayn ariza topshirish tizimi
           </Text>
         </Stack>
       </Group>

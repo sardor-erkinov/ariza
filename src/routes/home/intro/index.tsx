@@ -15,20 +15,20 @@ const Intro = () => {
           sx={(theme) => ({
             [theme.fn.smallerThan('xl')]: { justifyContent: 'center' },
           })}
-          spacing={50}
+          spacing={150}
           align={'flex-end'}
         >
           <IntroTitle />
-          <Box style={{ position: 'relative' }}>
+          <div style={{ position: 'relative' }}>
             <Img
               className={classes.img}
-              width={'580px'}
-              height={'590px'}
+              width={'400px'}
+              height={'600px'}
               src={StudentsImg.src}
               alt="students"
             />
             <div className={classes.ellipsis}></div>
-          </Box>
+          </div>
         </Group>
       </Container>
     </section>

@@ -1,4 +1,5 @@
 import { Text, Divider, SimpleGrid } from '@mantine/core';
+import DatePicker from '../../../../components/date-picker';
 import Select from '../../../../components/select';
 import TextInput from '../../../../components/text-input';
 
@@ -17,16 +18,8 @@ const SecondStep = ({ title }: { title?: string }) => {
         value="O'ZBEKISTON"
         data={["O'ZBEKISTON"]}
         defaultValue="O'ZBEKISTON"
-        disabled
       />
-      <Select
-        required
-        value="Toshkent shahri"
-        mb={20}
-        disabled
-        label="O‘quv muassasi nomi"
-        data={['Toshkent shahri']}
-      />
+      <TextInput required mb={20} label="O‘quv muassasi nomi" />
       <SimpleGrid
         breakpoints={[
           { minWidth: 755, cols: 2, spacing: 'sm' },
@@ -34,8 +27,8 @@ const SecondStep = ({ title }: { title?: string }) => {
         ]}
         mb={20}
       >
-        <Select required value="O'ZBEK" disabled label="Ta'lim shakli" data={["O'ZBEK"]} />
-        <Select required value="O'ZBEK" disabled label="Tamomlagan yili" data={["O'ZBEK"]} />
+        <Select required value="Kunduzgi" label="Ta'lim shakli" data={['Kunduzgi']} />
+        <DatePicker required label="Tamomlagan yili" placeholder="Tamomlagan yili" />
       </SimpleGrid>
     </>
   );
