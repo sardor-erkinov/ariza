@@ -9,7 +9,7 @@ const Intro = () => {
   const { classes } = useStyles();
 
   return (
-    <section className={classes.section}>
+    <section id="main" className={classes.section}>
       <Container size={'xl'}>
         <Group
           sx={(theme) => ({
