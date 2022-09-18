@@ -6,9 +6,8 @@ import AppStepper from './stepper';
 const ApplicationSteps = () => {
   const [active, setActive] = useState(0);
   const { classes } = useStyles();
-  const nextStep = () => setActive((current) => (current < 4 ? current + 1 : current));
+  const nextStep = () => setActive((current) => (current < 2 ? current + 1 : current));
   const prevStep = () => setActive((current) => (current > 0 ? current - 1 : current));
-  console.log({ active });
 
   return (
     <div className={classes.wrapper}>
@@ -37,7 +36,12 @@ const ApplicationSteps = () => {
               Orqaga
             </Button>
           )}
-          <Button size="lg" onClick={nextStep}>
+          <Button
+            disabled={active >= 2}
+            type="submit"
+            form={active < 1 ? 'user-data' : 'documents'}
+            size="lg"
+          >
             Keyingi qadam
           </Button>
         </Group>

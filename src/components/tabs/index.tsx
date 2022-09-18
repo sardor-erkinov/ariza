@@ -9,16 +9,12 @@ const Tabs = (props: UnstyledTabProps) => {
   const { classes } = useStyles({ space: props.space });
   return (
     <UnstyledTabs
-      variant="unstyled"
       classNames={{
-        body: classes.body,
         root: classes.root,
-        tabActive: classes.tabActive,
-        tabControl: classes.tabControl,
-        tabInner: classes.tabInner,
         tabLabel: classes.tabLabel,
         tabsList: classes.tabsList,
-        tabsListWrapper: classes.tabsListWrapper,
+        // tab: classes.tabInner,
+        panel: classes.panel,
       }}
       {...props}
     />

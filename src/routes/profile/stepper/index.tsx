@@ -1,16 +1,18 @@
-import { Button, Container, Group, Stepper, Title } from '@mantine/core';
+import { Button, Center, Container, Group, Stack, Stepper, Text, Title } from '@mantine/core';
+import { useRouter } from 'next/router';
 import { Dispatch, SetStateAction, useState } from 'react';
 import FirstStep from './first-step';
 import SecondStep from './second-step';
 import { useStyles } from './stepper.styles';
 
-interface AddStepperProps {
+export interface AddStepperProps {
   active: number;
   setActive: Dispatch<SetStateAction<number>>;
 }
 
 const AppStepper = ({ active, setActive }: AddStepperProps) => {
   const { classes } = useStyles();
+  const router = useRouter();
   return (
     <Stepper
       color={'dark'}
@@ -21,13 +23,11 @@ const AppStepper = ({ active, setActive }: AddStepperProps) => {
         separator: classes.separator,
         separatorActive: classes.separatorActive,
         stepBody: classes.stepBody,
-        stepCompleted: classes.stepCompleted,
         stepCompletedIcon: classes.stepCompletedIcon,
         stepDescription: classes.stepDescription,
         stepIcon: classes.stepIcon,
         stepLabel: classes.stepLabel,
         stepLoader: classes.stepLoader,
-        stepProgress: classes.stepProgress,
         steps: classes.steps,
       }}
       active={active}
@@ -35,21 +35,31 @@ const AppStepper = ({ active, setActive }: AddStepperProps) => {
       breakpoint="sm"
     >
       <Stepper.Step label="Shaxsiy ma'lumotlar" allowStepSelect={active > 0}>
-        <FirstStep />
+        <FirstStep setActive={setActive} active={active} />
       </Stepper.Step>
-      <Stepper.Step label="Tugatgan ta‘lim muassasasi" allowStepSelect={active > 1}>
-        <SecondStep />
-      </Stepper.Step>
-      <Stepper.Step label="Mutaxassislikni tanlash" allowStepSelect={active > 2}>
-        <SecondStep title="Mutaxassislikni tanlash" />
-      </Stepper.Step>
-      <Stepper.Step label="Imtiyozlarni kiritish" allowStepSelect={active > 3}>
-        <SecondStep title="Imtiyozlarni kiritish" />
+      <Stepper.Step label="Hujjatlar ro'yxati" allowStepSelect={active > 1}>
+        <SecondStep setActive={setActive} active={active} />
       </Stepper.Step>
       <Stepper.Completed>
-        <Title mb={250} sx={(theme) => ({ color: theme.colors.green[5] })} order={3}>
-          Muvaffaqiyatli yakunlandi!
-        </Title>
+        <Stack align={'center'} my={100}>
+          <Title
+            mb={30}
+            align="center"
+            sx={(theme) => ({ color: theme.colors.green[5], fontWeight: 400 })}
+            order={3}
+          >
+            Muvaffaqiyatli yakunlandi! 🎉
+          </Title>
+          <Text
+            weight={500}
+            sx={{ cursor: 'pointer' }}
+            color={'blue'}
+            size={'sm'}
+            onClick={() => router.push('/')}
+          >
+            Bosh sahifaga o'tish
+          </Text>
+        </Stack>
       </Stepper.Completed>
     </Stepper>
   );

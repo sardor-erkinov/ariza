@@ -34,14 +34,26 @@ const LoginModal = ({ setOpen, open }: LoginModalProps) => {
   };
   const handleVerification = (e: FormEvent) => {
     e.preventDefault();
-    console.log(e.target);
     // dispatch(loginAction(''));
   };
 
   return (
     <Modal title="Kirish yoki ro'yxatdan o'tish" onClose={() => setOpen(false)} opened={open}>
-      <StyledTabs>
-        <Tabs.Tab label="Tizimga kirish">
+      {/* <StyledTabs defaultValue="first">
+        <Tabs.List grow>
+          <Tabs.Tab value="first">First tab</Tabs.Tab>
+          <Tabs.Tab value="second">Second tab</Tabs.Tab>
+        </Tabs.List>
+
+        <Tabs.Panel value="first">First panel</Tabs.Panel>
+        <Tabs.Panel value="second">Second panel</Tabs.Panel>
+      </StyledTabs> */}
+      <StyledTabs defaultValue="Tizimga kirish">
+        <Tabs.List grow>
+          <Tabs.Tab value="Tizimga kirish">Tizimga kirish</Tabs.Tab>
+          <Tabs.Tab value="Ro'yxatdan o'tish">Ro'yxatdan o'tish</Tabs.Tab>
+        </Tabs.List>
+        <Tabs.Panel value="Tizimga kirish">
           <form onSubmit={handleLogin}>
             <Stack spacing={25}>
               <TextInput
@@ -65,8 +77,8 @@ const LoginModal = ({ setOpen, open }: LoginModalProps) => {
               </Button>
             </Stack>
           </form>
-        </Tabs.Tab>
-        <Tabs.Tab label="Ro'yxatdan o'tish">
+        </Tabs.Panel>
+        <Tabs.Panel value="Ro'yxatdan o'tish">
           <form onSubmit={handleVerification}>
             <Stack spacing={25}>
               <TextInput
@@ -102,7 +114,7 @@ const LoginModal = ({ setOpen, open }: LoginModalProps) => {
               </Button>
             </Stack>
           </form>
-        </Tabs.Tab>
+        </Tabs.Panel>
       </StyledTabs>
     </Modal>
   );
