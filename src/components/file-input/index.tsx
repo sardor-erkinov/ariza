@@ -53,7 +53,7 @@ const ValueComponent: FileInputProps['valueComponent'] = ({ value }) => {
 
   return value && <Value file={value} />;
 };
-const FileInput = ({ infoText, infoTitle, ...props }: InputProps) => {
+const FileInput = ({ infoText, infoTitle, ismultiple, ...props }: InputProps) => {
   const { classes } = useStyles();
 
   return infoText ? (
@@ -67,6 +67,7 @@ const FileInput = ({ infoText, infoTitle, ...props }: InputProps) => {
           label: classes.truncateLabel,
         }}
         {...props}
+        multiple={ismultiple}
       />
     </InfoInput>
   ) : (
@@ -79,6 +80,7 @@ const FileInput = ({ infoText, infoTitle, ...props }: InputProps) => {
         label: classes.label,
       }}
       {...props}
+      multiple={ismultiple}
     />
   );
 };

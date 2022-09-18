@@ -179,7 +179,7 @@ Nomzodning yutuqlari kamida viloyat darajasida bo‘lishi lozim.`}
         
         Xorijiy tillarda yozilgan hujjatlarning tarjimasi notarial idora tomonidan tasdiqlangan holda ilova qilinishi kerak. Hujjat berilgan yilning yozilganligiga hamda «Asliga to‘g‘ri» deb tasdiqlanganligiga alohida eʼtibor qaratish lozim.`}
           label="Nomzodning erishgan yutuqlari bo‘yicha tasdiqlovchi hujjatlarining nusxalari"
-          multiple
+          ismultiple
         />
         <Divider color={'gray'} my={5} size={0.5} />
 
@@ -248,7 +248,7 @@ va muhrlar aniq ko‘rinishi kerak.`}
             infoTitle="Nomzodning fotosurati (2 dona)"
             placeholder="Nomzodning fotosurati (2 dona)"
             required
-            multiple
+            ismultiple
             infoText={`Nomzodning 9x12 sm. (orqa fon och havo rangda) hajmdagi  yuqori sifatli 2 dona fotosurati taqdim etiladi. Fotosuratda:
 
 - o‘quvchining rasmiy kiyimda, oq rangdagi ko‘ylak
@@ -270,7 +270,7 @@ Fotosuratga professional fotostudiyalarda tushish tavsiya etiladi.
             placeholder="Nomzodning faoliyati aks ettirilgan fotolavhalar
 (5-6 ta)"
             required
-            multiple
+            ismultiple
             infoText={`Fotosuratda:
 
 - o‘quvchining rasmiy kiyimda, oq rangdagi ko‘ylak
