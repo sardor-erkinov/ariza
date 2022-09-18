@@ -8,10 +8,12 @@ export const useStyles = createStyles((theme, _param, getRef) => ({
   },
   btmContainer: {
     padding: '1.5rem',
+    border: theme.colorScheme === 'dark' ? '1px solid white' : '',
     borderRadius: '0.5rem',
     background: theme.colorScheme === 'light' ? 'white' : 'transparent',
   },
   topContainer: {
+    border: theme.colorScheme === 'dark' ? '1px solid white' : '',
     padding: '1.5rem',
     borderRadius: '0.5rem',
     background: theme.colorScheme === 'light' ? 'white' : 'transparent',
@@ -27,29 +29,30 @@ export const useStyles = createStyles((theme, _param, getRef) => ({
     margin: '0 auto',
     padding: '1.5rem',
     borderRadius: '0.5rem',
+    border: theme.colorScheme === 'dark' ? '1px solid white' : '',
     background: theme.colorScheme === 'light' ? 'white' : 'transparent',
   },
-  root: { maxWidth: '1140px', width: '100%', margin: '0 auto' },
+  root: {
+    maxWidth: '1140px',
+    width: '100%',
+    margin: '0 auto',
+  },
   step: {
     position: 'relative',
+
     padding: '0.5rem',
     borderRadius: '0.5rem',
     background: theme.colorScheme === 'dark' ? 'transparent' : 'white',
-    border: `1px solid ${theme.colors.gray[4]}`,
+    border: `3px solid ${theme.colors.gray[4]}`,
   },
   separator: {
     background: theme.colorScheme === 'dark' ? 'white' : theme.colors.gray[3],
   },
   separatorActive: {
-    background: theme.colorScheme === 'dark' ? 'grey' : '#2bb76b',
+    background: theme.colorScheme === 'dark' ? 'grey' : 'green',
   },
   stepBody: {
-    // background: 'red',
     position: 'relative',
-  },
-  stepCompleted: {
-    border: `1px solid ${theme.colors.green[4]}`,
-    background: 'rgb(234, 248, 241)',
   },
   stepCompletedIcon: {
     background: '#2bb76b',

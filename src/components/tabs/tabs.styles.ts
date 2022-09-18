@@ -23,35 +23,33 @@ export const useStyles = createStyles((theme, { space }: { space?: string }, get
     lineHeight: '27px',
     borderBottom: `3px solid ${theme.colors.blue[6]}`,
   },
-  tabControl: {
-    width: '50%',
-    padding: '0',
-    height: '50px',
-    borderBottom: `1px solid ${theme.colors.gray[6]}`,
+  panel: {
+    margin: '20px 0 0 0',
   },
   tabInner: {
     width: '100%',
     padding: '0px',
+    marginBottom: '20px',
   },
   tabLabel: {
     ref: getRef('tabLabel'),
     fontSize: '18px',
     fontWeight: 400,
     transition: 'all 0.3s linear',
-    color: theme.colors.gray[6],
-    lineHeight: '24px',
+    color: theme.colors.dark[6],
+    lineHeight: '28px',
   },
   tabsList: {
     width: '100%',
     display: 'flex',
-    // [`@media (max-width: ${screenSizes.md})`]: {
-    //   padding: '0 10px',
-    //   justifyContent: 'space-between',
-    // },
+    [`@media (max-width: ${screenSizes.md})`]: {
+      padding: '0 10px',
+      justifyContent: 'space-between',
+    },
   },
   tabsListWrapper: {
     width: '100%',
-    // justifyContent: 'center',
-    // margin: '0 auto',
+    justifyContent: 'center',
+    margin: '0 auto',
   },
 }));
