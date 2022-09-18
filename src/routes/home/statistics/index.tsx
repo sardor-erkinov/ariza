@@ -6,7 +6,7 @@ import TableStatistics from './table';
 const Statistics = () => {
   const [found, setFound] = useState<boolean>(false);
   return (
-    <Container pt={120} px={12} size={'xl'}>
+    <Container id="statistics" pt={120} px={12} size={'xl'}>
       <Title
         sx={{
           fontWeight: 500,

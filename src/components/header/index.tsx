@@ -44,11 +44,11 @@ const Header = () => {
       name: 'Imtiyozlar',
       hashtag: '#privilege',
     },
-    {
-      id: 3,
-      name: 'Yangiliklar',
-      hashtag: '#news',
-    },
+    // {
+    //   id: 3,
+    //   name: 'Yangiliklar',
+    //   hashtag: '#news',
+    // },
     {
       id: 4,
       name: 'Statistikalar',
@@ -93,7 +93,7 @@ const Header = () => {
               </Menu>
             ) : (
               hashLinks.map((item) => (
-                <Link key={item.id} passHref href={`/${item.hashtag}`}>
+                <Link locale={'s'} key={item.id} shallow passHref href={`/${item.hashtag}`}>
                   <Text weight={500} size={'sm'}>
                     {item.name}
                   </Text>

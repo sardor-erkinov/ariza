@@ -8,7 +8,7 @@ const Privilege = () => {
   const manTheme = useMantineTheme();
   const { classes } = useStyles();
   return (
-    <Container px={12} py={120} size={'xl'}>
+    <Container id={'privilege'} px={12} py={120} size={'xl'}>
       <Center>
         <Title align="center" mb={129} order={2}>
           Davlat mukofotiga topshiruvchilar <br /> uchun imtiyozlar
