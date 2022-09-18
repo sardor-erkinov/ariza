@@ -1,7 +1,7 @@
 import { createStyles, MantineSize, ButtonProps } from '@mantine/core';
 import { colors, fontSizes, lineHeights } from '../../styles/variables';
 
-export const useStyles = createStyles((theme, props: ButtonProps<any>) => ({
+export const useStyles = createStyles((theme, props: ButtonProps) => ({
   root: {
     width: 'auto',
     borderRadius: '0.5rem',
