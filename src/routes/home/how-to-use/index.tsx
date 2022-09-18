@@ -48,7 +48,7 @@ const HowToUse = () => {
           className={classes.iframe}
           width="100%"
           height="600px"
-          src="https://www.youtube.com/embed/ZHzRXbCsHxM"
+          src="https://www.youtube.com/embed/uTKWDEuDSJ0"
           title="Videoqo'llanma"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
